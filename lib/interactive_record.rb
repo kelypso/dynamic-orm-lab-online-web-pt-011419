@@ -53,8 +53,8 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end
 
-  def self.find_by(attributes)
-    sql = "SELECT * FROM #{self.table_name} WHERE #{attributes.keys.flatten[0].to_s} = '#{attributes.values.flatten[0]}'"
+  def self.find_by(attribute)
+    sql = "SELECT * FROM #{self.table_name} WHERE #{attribute.keys.flatten[0].to_s} = '#{attribute.values.flatten[0]}'"
     DB[:conn].execute(sql)
   end
 
