@@ -3,6 +3,7 @@ require 'active_support/inflector'
 require 'pry'
 
 class InteractiveRecord
+  
   def self.table_name
     self.to_s.downcase.pluralize
   end
@@ -56,4 +57,5 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE #{hash.keys[0].to_s} = '#{hash.values[0].to_s}'"
     DB[:conn].execute(sql)
   end
+  
 end
